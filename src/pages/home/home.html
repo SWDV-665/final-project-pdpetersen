@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h3 class ="no-jobs" text-center *ngIf="loadJobs().length === 0">
+    No Open Jobs To Fill    
+  </h3>
+  <ion-list>
+    <ion-item-sliding *ngFor="let job of loadJobs(); let i = index">
+      <ion-item>
+        <h2>{{job.job_title}}</h2>
+        <p>{{job.job_location}}: {{job.job_department}} - {{job.job_shift}}</p>
+        <p>{{job.job_class}}</p>
+
+      </ion-item>
+      <ion-item-options>
+        <button (click)="removeJob(job, i)" ion-button color="secondary" icon-start>
+          <ion-icon name="checkmark"></ion-icon>
+          Mark As Filled
+        </button>
+
+        <button (click)="editJob(job, i)" ion-button color="primary" icon-start>
+          <ion-icon name="create"></ion-icon>
+          Edit Open Job
+        </button>
+
+        <button (click)="shareJob(job, i)" ion-button color="light" icon-start>
+          <ion-icon name="share-alt"></ion-icon>
+          Share Open Job
+        </button>
+
+
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button (click)="addJob()" ion-fab mini>
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

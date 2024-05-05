@@ -1,0 +1,38 @@
+page-home {
+
+    // Styles for the 'no-jobs' class
+    .no-jobs {
+        color: map-get($colors, 'primary'); // Set text color to primary color
+        text-align: center; // Center align the text
+        margin-top: 20px; // Add some top margin for spacing
+    }
+
+    // Styles for the ion-item
+    ion-item {
+        h2 {
+            margin-bottom: 5px; // Add some bottom margin to separate job title from other details
+        }
+        p {
+            margin: 0; // Remove default margin for paragraphs inside ion-item
+        }
+    }
+
+    // Styles for ion-item-sliding
+    ion-item-sliding {
+        ion-item {
+            background-color: #f9f9f9; // Set a background color for each item
+        }
+    }
+
+    // Styles for ion-item-options
+    ion-item-options {
+        button {
+            margin-top: 5px; // Add some top margin between buttons
+        }
+    }
+
+    // Styles for ion-fab
+    ion-fab {
+        margin-bottom: 20px; // Add some bottom margin for spacing
+    }
+}
